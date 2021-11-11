@@ -1,0 +1,39 @@
+[debug] [2021-06-26T00:19:09.394Z] ----------------------------------------------------------------------
+[debug] [2021-06-26T00:19:09.398Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\USER\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2021-06-26T00:19:09.399Z] CLI Version:   9.14.0
+[debug] [2021-06-26T00:19:09.399Z] Platform:      win32
+[debug] [2021-06-26T00:19:09.399Z] Node Version:  v14.3.0
+[debug] [2021-06-26T00:19:09.401Z] Time:          Fri Jun 25 2021 17:19:09 GMT-0700 (Pacific Daylight Time)
+[debug] [2021-06-26T00:19:09.401Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-06-26T00:19:09.418Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-06-26T00:19:09.419Z] > authorizing via signed-in user (ogbodouchenna1425@gmail.com)
+[debug] [2021-06-26T00:19:09.419Z] [iam] checking project c-stemagic-videoapp-clone for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2021-06-26T00:19:09.425Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/c-stemagic-videoapp-clone:testIamPermissions  
+ {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2021-06-26T00:19:09.548Z] [iam] error while checking permissions, command may fail: FirebaseError: Server Error. getaddrinfo ENOTFOUND cloudresourcemanager.googleapis.com
+[debug] [2021-06-26T00:19:09.556Z] >>> HTTP REQUEST POST https://iam.googleapis.com/v1/projects/c-stemagic-videoapp-clone/serviceAccounts/c-stemagic-videoapp-clone@appspot.gserviceaccount.com:testIamPermissions  
+ {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2021-06-26T00:19:09.597Z] [functions] service account IAM check errored, deploy may fail: Server Error. getaddrinfo ENOTFOUND iam.googleapis.com {"name":"FirebaseError","children":[],"exit":2,"message":"Server Error. getaddrinfo ENOTFOUND iam.googleapis.com","original":{"errno":-3008,"code":"ENOTFOUND","syscall":"getaddrinfo","hostname":"iam.googleapis.com"},"status":500}
+[debug] [2021-06-26T00:19:09.608Z] > refreshing access token with scopes: []
+[debug] [2021-06-26T00:19:09.609Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-06-26T00:19:09.623Z] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2021-06-26T00:19:09.655Z] FirebaseError: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+    at invalidCredentialError (C:\Users\USER\AppData\Roaming\npm\node_modules\firebase-tools\lib\auth.js:141:12)
+    at refreshTokens (C:\Users\USER\AppData\Roaming\npm\node_modules\firebase-tools\lib\auth.js:448:15)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at async Client.getAccessToken (C:\Users\USER\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:144:23)
+    at async Client.addAuthHeader (C:\Users\USER\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:135:21)
+    at async Client.request (C:\Users\USER\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:93:34)
+    at async Object.getFirebaseProject (C:\Users\USER\AppData\Roaming\npm\node_modules\firebase-tools\lib\management\projects.js:290:21)
+    at async Object.getDefaultHostingSite (C:\Users\USER\AppData\Roaming\npm\node_modules\firebase-tools\lib\getDefaultHostingSite.js:8:21)
+    at async requireHostingSite (C:\Users\USER\AppData\Roaming\npm\node_modules\firebase-tools\lib\requireHostingSite.js:9:18)
+    at async Object.fn (C:\Users\USER\AppData\Roaming\npm\node_modules\firebase-tools\lib\commands\deploy.js:65:9)
+    at async C:\Users\USER\AppData\Roaming\npm\node_modules\firebase-tools\lib\command.js:169:17
+[error] 
+[error] Error: Failed to get Firebase project c-stemagic-videoapp-clone. Please make sure the project exists and your account has permission to access it.
